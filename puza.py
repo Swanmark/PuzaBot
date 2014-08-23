@@ -6,7 +6,7 @@ from random import randrange
 import json
 
 
-nick = "PuzaBot"
+nick = "DrPuzaBot"
 server = "irc.freenode.net"
 ras = "#coinking"
 nickservpass = "INSERT_PASSWORD_HERE"
