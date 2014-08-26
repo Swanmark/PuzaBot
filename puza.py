@@ -12,8 +12,16 @@ server = "irc.freenode.net"
 ras = "#coinking"
 nickservpass = "INSERT_PASSWORD_HERE"
 bSize = "8192"
-irc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-irc.connect((server, 6667))
+
+#non-SSL
+#irc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#irc.connect((server, 6667))
+
+#with SSL
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+irc = ssl.wrap_socket(s)
+irc.connect((server, 6697))
+
 time.sleep(1)
 irc.recv(8192)
 irc.send('NICK '+nick+'\r\n')
