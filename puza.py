@@ -9,7 +9,7 @@ nick = "DrPuzaBot"
 server = "irc.freenode.net"
 ras = "#coinking"
 ras2 = "##DrPuza"
-nickservpass = "puzalove"
+nickservpass = "nickservpwd"
 bSize = "8192"
 irc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 irc.connect((server, 6667))
@@ -20,7 +20,7 @@ irc.send('USER PUZA PUZA PUZA :Puza is #1\r\n')
 time.sleep(2)
 irc.send('JOIN '+ras+'\r\n')
 irc.send('JOIN '+ras2+'\r\n')
-irc.send('PRIVMSG nickserv :IDENTIFY DrPuzaBot '+nickservpass+'\r\n')
+#irc.send('PRIVMSG nickserv :IDENTIFY DrPuzaBot '+nickservpass+'\r\n')
 while True:
   data = irc.recv(8192)
   print (data)
